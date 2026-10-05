@@ -1,0 +1,273 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Croply · Gestión agrícola inteligente</title>
+  <meta name="description" content="Croply: sistema de gestión agrícola inteligente para pequeños y medianos productores de Mendoza. Proyecto Final, Ingeniería en Sistemas de Información, UTN FRM.">
+  <meta name="theme-color" content="#F5F2EC">
+  <link rel="icon" href="assets/img/logo-vertical.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <header class="topbar">
+    <a class="topbar__logo" href="#inicio" aria-label="Croply, ir al inicio">
+      <img src="assets/img/logo-horizontal.svg" alt="Croply" height="52">
+    </a>
+    <span class="badge">Proyecto Final · Ing. en Sistemas de Información · UTN FRM</span>
+  </header>
+
+  <main id="inicio">
+    <!-- ============ HERO ============ -->
+    <section class="hero">
+      <img class="hero__dots" src="assets/img/puntitos.svg" alt="" aria-hidden="true">
+      <div class="container hero__grid">
+        <div class="hero__text reveal">
+          <p class="eyebrow">Sistema de gestión agrícola</p>
+          <h1>Gestión agrícola inteligente para el productor de Mendoza</h1>
+          <p class="lead">Croply reúne en un solo lugar las parcelas, los cultivos, las tareas y los costos de la finca, y suma pronóstico del clima y recomendaciones asistidas por inteligencia artificial.</p>
+          <div class="hero__cta">
+            <a class="btn btn--primary" href="#recorrido">Ver el recorrido <span aria-hidden="true">↓</span></a>
+            <a class="btn btn--ghost" href="#proyecto">Conocer el proyecto</a>
+          </div>
+        </div>
+
+        <div class="hero__media reveal" style="--d:.15s">
+          <figure class="browser">
+            <div class="browser__bar" aria-hidden="true"><i></i><i></i><i></i><span>Croply · Mi finca</span></div>
+            <div class="browser__screen browser__screen--img"><img src="assets/img/mi-finca-admin.png" width="1440" height="1321" alt="Pantalla Mi finca de Croply: parcelas con su cultivo, pronóstico del clima, recomendación de inteligencia artificial y resumen de costos"></div>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PROBLEMA ============ -->
+    <section class="section" id="proyecto">
+      <div class="container">
+        <header class="section__head reveal">
+          <p class="eyebrow">El punto de partida</p>
+          <h2>Lo que encontramos en el campo</h2>
+          <p class="section__sub">Antes de diseñar el sistema, entrevistamos a quienes trabajan la tierra todos los días. Esto es lo que nos dijeron.</p>
+        </header>
+
+        <div class="quotes">
+          <blockquote class="quote reveal">
+            <p>“Nos basamos en la experiencia y en observar el cultivo.”</p>
+            <footer>Encargado de finca, Guaymallén</footer>
+          </blockquote>
+          <blockquote class="quote reveal" style="--d:.1s">
+            <p>“Si curas y llueve a las dos horas, pierdes el producto y tienes que volver a empezar.”</p>
+            <footer>Encargado de finca, Guaymallén</footer>
+          </blockquote>
+          <blockquote class="quote reveal" style="--d:.2s">
+            <p>“La rentabilidad es baja, entonces los productores no pueden acceder a la tecnología.”</p>
+            <footer>Ingeniero agrónomo de una bodega de la región</footer>
+          </blockquote>
+        </div>
+
+        <header class="section__head section__head--sub reveal">
+          <h3 class="h-sub">Del relevamiento al sistema</h3>
+          <p class="section__sub">Las entrevistas y el análisis de herramientas existentes dejaron cuatro problemas recurrentes. Croply responde a cada uno.</p>
+        </header>
+
+        <div class="map">
+          <div class="map__heads" aria-hidden="true"><span>Lo que identificamos</span><span></span><span>Cómo responde Croply</span></div>
+
+          <div class="map__row reveal">
+            <article class="mcard mcard--problem"><span class="mcard__n">1</span><p>El conocimiento de cada cultivo vive en la experiencia de quien trabaja la finca y no queda registrado.</p></article>
+            <span class="map__arrow" aria-hidden="true"><svg viewBox="0 0 56 20"><path d="M2 10h50M43 3l9 7-9 7"/></svg></span>
+            <article class="mcard mcard--solution"><p>Biblioteca de cultivos con fichas técnicas y calendarios que generan un plan de acción.</p></article>
+          </div>
+          <div class="map__row reveal">
+            <article class="mcard mcard--problem"><span class="mcard__n">2</span><p>El clima obliga a reprogramar tareas, y un tratamiento mal ubicado puede significar perder el producto.</p></article>
+            <span class="map__arrow" aria-hidden="true"><svg viewBox="0 0 56 20"><path d="M2 10h50M43 3l9 7-9 7"/></svg></span>
+            <article class="mcard mcard--solution"><p>Pronóstico, alertas climáticas automáticas y tareas fáciles de reprogramar.</p></article>
+          </div>
+          <div class="map__row reveal">
+            <article class="mcard mcard--problem"><span class="mcard__n">3</span><p>Los registros de memoria o en papel quedan incompletos y dificultan la trazabilidad.</p></article>
+            <span class="map__arrow" aria-hidden="true"><svg viewBox="0 0 56 20"><path d="M2 10h50M43 3l9 7-9 7"/></svg></span>
+            <article class="mcard mcard--solution"><p>Notas de campo, incluso sin conexión, cuaderno de agroquímicos y reportes en PDF.</p></article>
+          </div>
+          <div class="map__row reveal">
+            <article class="mcard mcard--problem"><span class="mcard__n">4</span><p>Las herramientas disponibles suelen ser costosas o pensadas para grandes explotaciones.</p></article>
+            <span class="map__arrow" aria-hidden="true"><svg viewBox="0 0 56 20"><path d="M2 10h50M43 3l9 7-9 7"/></svg></span>
+            <article class="mcard mcard--solution"><p>Una plataforma accesible, pensada para pequeños y medianos productores, con seguimiento de costos.</p></article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SOLUCIÓN / ARQUITECTURA ============ -->
+    <section class="section section--tint">
+      <div class="container solution">
+        <div class="solution__text reveal">
+          <p class="eyebrow">Lo que construimos</p>
+          <h2>Una sola plataforma, de la parcela a la decisión</h2>
+          <p>Croply centraliza la gestión operativa y agronómica de la finca. Combina datos de sensores IoT, pronóstico del clima e inteligencia artificial para ofrecer alertas y recomendaciones adaptadas a cada cultivo y a su etapa.</p>
+          <p class="note">En el prototipo, los datos de sensores se generan con un simulador propio.</p>
+        </div>
+        <figure class="arch reveal" style="--d:.15s">
+          <img src="assets/img/arquitectura.svg" alt="Diagrama de arquitectura de Croply: usuario, frontend, backend, base de datos, sensores IoT, API climática y servicio de inteligencia artificial" loading="lazy">
+        </figure>
+      </div>
+      <div class="container">
+        <!-- Cifras tomadas del informe: 10 módulos (2.10), 68 historias de usuario, 26 pantallas con código PAN (a confirmar contra Figma), 9 casos de prueba (2.14) -->
+        <p class="eyebrow eyebrow--center reveal">Croply en números</p>
+        <ul class="stats reveal">
+          <li><strong data-count="10">0</strong><span>módulos del sistema</span></li>
+          <li><strong data-count="68">0</strong><span>historias de usuario</span></li>
+          <li><strong data-count="26">0</strong><span>pantallas diseñadas</span></li>
+          <li><strong data-count="9">0</strong><span>casos de prueba</span></li>
+        </ul>
+        <p class="eyebrow eyebrow--center eyebrow--gap reveal">Tecnologías utilizadas</p>
+        <ul class="chips reveal" aria-label="Tecnologías utilizadas">
+          <li>React</li><li>TypeScript</li><li>Tailwind CSS</li><li>NestJS</li><li>PostgreSQL</li><li>Python</li><li>MQTT</li><li>Docker</li><li>Figma</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============ RECORRIDO (carrusel) ============ -->
+    <section class="section" id="recorrido">
+      <div class="container">
+        <header class="section__head reveal">
+          <p class="eyebrow">El sistema en acción</p>
+          <h2>Un recorrido por Croply</h2>
+          <p class="section__sub">Siete funcionalidades principales del sistema en funcionamiento.</p>
+        </header>
+
+        <div class="carousel reveal" id="carousel" aria-roledescription="carrusel">
+          <img class="carousel__char" src="assets/img/personaje-2.png" alt="" aria-hidden="true" data-character="2">
+          <div class="carousel__viewport">
+            <ul class="carousel__track">
+              <li class="slide" aria-label="1 de 7">
+                <figure class="browser"><div class="browser__bar" aria-hidden="true"><i></i><i></i><i></i><span>Mi finca</span></div>
+                <div class="browser__screen browser__screen--pan pan--scroll" style="--y1:-53.8%;--dur:14s"><img src="assets/img/Mi finca- detalle parcela con cultivo y espacio.png" width="1440" height="1819" alt="Detalle de una parcela en Croply: datos del cultivo, sensores, pronóstico, recomendación de IA, calendario, evolución del cultivo y tareas del día"></div></figure>
+                <div class="slide__caption"><h3>Mi finca</h3><p>Visualización de las parcelas, con el cultivo asignado y su estado de desarrollo.</p></div>
+              </li>
+              <li class="slide" aria-label="2 de 7">
+                <figure class="browser"><div class="browser__bar" aria-hidden="true"><i></i><i></i><i></i><span>Biblioteca de cultivos</span></div>
+                <div class="browser__screen" data-video="assets/video/02-biblioteca-cultivos.mp4" data-label="02-biblioteca-cultivos.mp4"></div></figure>
+                <div class="slide__caption"><h3>Biblioteca de cultivos</h3><p>Fichas técnicas y calendarios de siembra para generar planes de acción con respaldo agronómico.</p></div>
+              </li>
+              <li class="slide" aria-label="3 de 7">
+                <figure class="browser"><div class="browser__bar" aria-hidden="true"><i></i><i></i><i></i><span>Notas y tareas de campo</span></div>
+                <div class="browser__screen" data-video="assets/video/03-notas-tareas.mp4" data-label="03-notas-tareas.mp4"></div></figure>
+                <div class="slide__caption"><h3>Notas y tareas de campo</h3><p>Observaciones registradas incluso sin conexión y convertidas luego en tareas programadas.</p></div>
+              </li>
+              <li class="slide" aria-label="4 de 7">
+                <figure class="browser"><div class="browser__bar" aria-hidden="true"><i></i><i></i><i></i><span>Pronóstico meteorológico</span></div>
+                <div class="browser__screen browser__screen--pan pan--zoom" style="--x1:-160%;--y1:-21.5%;--z1:2.6;--dur:11s"><img src="assets/img/Mi finca- detalle parcela con cultivo y espacio.png" width="1440" height="1819" alt="Tarjeta de pronóstico del clima de Croply con temperatura actual y los próximos días"></div></figure>
+                <div class="slide__caption"><h3>Pronóstico meteorológico</h3><p>Pronóstico actualizado y alertas automáticas ante condiciones climáticas adversas.</p></div>
+              </li>
+              <li class="slide" aria-label="5 de 7">
+                <figure class="browser"><div class="browser__bar" aria-hidden="true"><i></i><i></i><i></i><span>Recomendaciones con IA</span></div>
+                <div class="browser__screen browser__screen--pan pan--zoom" style="--x1:-100%;--y1:-74.2%;--z1:2;--dur:11s"><img src="assets/img/mi-finca-admin.png" width="1440" height="1321" alt="Tarjeta de recomendación de inteligencia artificial de Croply: riego requerido por humedad baja detectada"></div></figure>
+                <div class="slide__caption"><h3>Recomendaciones con IA</h3><p>Sugerencias agronómicas según los datos de sensores, el clima y la etapa del cultivo.</p></div>
+              </li>
+              <li class="slide" aria-label="6 de 7">
+                <figure class="browser"><div class="browser__bar" aria-hidden="true"><i></i><i></i><i></i><span>Gestión de agroquímicos</span></div>
+                <div class="browser__screen browser__screen--pan pan--scroll" style="--y1:-23.5%;--dur:10s"><img src="assets/img/Agroquimicos.png" width="1440" height="1100" alt="Cuaderno de campo de agroquímicos de Croply con el registro de tratamientos por parcela"></div></figure>
+                <div class="slide__caption"><h3>Gestión de agroquímicos</h3><p>Registro de tratamientos por parcela, con reportes en PDF para auditorías.</p></div>
+              </li>
+              <li class="slide" aria-label="7 de 7">
+                <figure class="browser"><div class="browser__bar" aria-hidden="true"><i></i><i></i><i></i><span>Costos</span></div>
+                <div class="browser__screen" data-video="assets/video/07-costos.mp4" data-label="07-costos.mp4"></div></figure>
+                <div class="slide__caption"><h3>Costos</h3><p>Seguimiento de compras e insumos, con reportes en PDF y evolución mensual de gastos.</p></div>
+              </li>
+            </ul>
+          </div>
+          <div class="carousel__controls">
+            <button class="round" id="prev" aria-label="Funcionalidad anterior">←</button>
+            <div class="dots" id="dots" role="tablist" aria-label="Elegir funcionalidad"></div>
+            <button class="round" id="next" aria-label="Funcionalidad siguiente">→</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ LÍNEA DE TIEMPO ============ -->
+    <section class="section section--tint" id="timeline">
+      <div class="container">
+        <header class="section__head reveal">
+          <p class="eyebrow">Cómo llegamos hasta acá</p>
+          <h2>Del problema al producto</h2>
+          <p class="section__sub">Seis etapas, desde la idea inicial hasta el sistema final.</p>
+        </header>
+
+        <ol class="timeline" id="tl">
+          <li class="tl__item tl--up" style="--size:96px;--i:0">
+            <div class="tl__label"><span class="tl__date">Etapa 1</span><h3>La idea</h3><p>Partimos de una pregunta: cómo ayudar al productor a decidir con información y no solo con intuición.</p><div class="tl__tags"><span>Anteproyecto</span><span>Objetivos iniciales</span></div></div>
+            <span class="tl__bubble"></span><span class="tl__dot"></span>
+          </li>
+          <li class="tl__item tl--down" style="--size:150px;--i:1">
+            <div class="tl__label"><span class="tl__date">Etapa 2</span><h3>Escuchar</h3><p>Salimos a entender cómo se trabaja hoy: conversamos con quienes producen y analizamos las herramientas existentes.</p><div class="tl__tags"><span>2 entrevistas</span><span>3 soluciones analizadas</span></div></div>
+            <span class="tl__bubble"></span><span class="tl__dot"></span>
+          </li>
+          <li class="tl__item tl--up" style="--size:170px;--i:2">
+            <div class="tl__label"><span class="tl__date">Etapa 3</span><h3>Definir</h3><p>Convertimos lo aprendido en requisitos claros: qué debe hacer el sistema, para quién y hasta dónde llega, y comprobamos que fuera viable.</p><div class="tl__tags"><span>68 historias de usuario</span><span>9 épicas</span><span>Factibilidad, costos y riesgos</span></div></div>
+            <span class="tl__bubble"></span><span class="tl__dot"></span>
+          </li>
+          <li class="tl__item tl--down" style="--size:130px;--i:3">
+            <div class="tl__label"><span class="tl__date">Etapa 4</span><h3>Diseñar</h3><p>Antes de programar, dibujamos el sistema: sus datos, sus pantallas y cómo se conectan sus partes.</p><div class="tl__tags"><span>Modelo de datos</span><span>Prototipos en Figma</span><span>Arquitectura</span></div></div>
+            <span class="tl__bubble"></span><span class="tl__dot"></span>
+          </li>
+          <li class="tl__item tl--up" style="--size:160px;--i:4">
+            <div class="tl__label"><span class="tl__date">Etapa 5</span><h3>Construir</h3><p>Desarrollamos Croply por etapas: una primera versión con las funciones principales y una segunda casi completa.</p><div class="tl__tags"><span>Interfaz web</span><span>Backend</span><span>Inteligencia artificial</span><span>Simulador de sensores</span></div></div>
+            <span class="tl__bubble"></span><span class="tl__dot"></span>
+          </li>
+          <li class="tl__item tl--down" style="--size:120px;--i:5">
+            <div class="tl__label"><span class="tl__date">Etapa 6</span><h3>Probar y entregar</h3><p>Verificamos que todo funcione, documentamos el sistema y lo preparamos para su presentación: el producto final.</p><div class="tl__tags"><span>9 pruebas</span><span>Manual de usuario</span><span>Plan de implementación</span></div></div>
+            <span class="tl__bubble"></span><span class="tl__dot"></span>
+            <img class="tl__char" src="assets/img/personaje-3.png" alt="" aria-hidden="true" data-character="3">
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ============ ODS ============ -->
+    <section class="section">
+      <div class="container">
+        <header class="section__head reveal">
+          <p class="eyebrow">Compromiso</p>
+          <h2>Objetivos de Desarrollo Sostenible</h2>
+        </header>
+        <div class="ods">
+          <article class="ods__card reveal">
+            <img class="ods__img" src="assets/img/ODS2.svg" width="112" height="112" alt="Objetivo de Desarrollo Sostenible 2: Hambre cero">
+            <div><h3>Hambre cero</h3><p>Apoya la producción de pequeños y medianos productores, base de la alimentación local.</p></div>
+          </article>
+          <article class="ods__card reveal" style="--d:.1s">
+            <img class="ods__img" src="assets/img/ODS12.svg" width="112" height="112" alt="Objetivo de Desarrollo Sostenible 12: Producción y consumo responsables">
+            <div><h3>Producción y consumo responsables</h3><p>Promueve un uso más eficiente del agua y de los insumos, con registro y trazabilidad.</p></div>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ CIERRE ============ -->
+  <footer class="closing">
+    <div class="closing__stage">
+      <div class="closing__art" aria-hidden="true"></div>
+      <div class="closing__card reveal">
+          <img src="assets/img/logo-horizontal.svg" alt="Croply" height="52">
+          <p class="closing__title">De la idea al campo</p>
+          <p class="closing__text">Croply es el Proyecto Final de Ingeniería en Sistemas de Información de la UTN Facultad Regional Mendoza, presentado en la 20.º Exposición Anual de Proyectos de Sistema, noviembre de 2026.</p>
+          <p class="closing__team">Rodrigo Sanz · Diego Páez · Paula Rodríguez</p>
+          <!-- Botones al informe y al manual: se agregarán más adelante
+          <div class="closing__links">
+            <a class="btn btn--primary" href="assets/docs/informe-proyecto-final.pdf" target="_blank" rel="noopener">Informe del proyecto</a>
+            <a class="btn btn--ghost" href="assets/docs/manual-de-usuario.pdf" target="_blank" rel="noopener">Manual de usuario</a>
+          </div>
+          -->
+        </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

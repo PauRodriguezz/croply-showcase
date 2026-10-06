@@ -25,7 +25,7 @@ Fondo crema #F5F2EC, verde #076B45, verde oscuro #12382A, acento #E8F5EF, borde 
 4. El sistema en acción: carrusel de 7 pantallas: 3 videos cortos (biblioteca, notas, costos) y 4 capturas con animación de scroll/zoom (clase `browser__screen--pan`, variables `--x1/--y1/--z1/--dur`) de escritorio (no se llama "demo" porque no muestra todo el sistema).
 5. Línea de tiempo del proyecto (hitos del informe, sección 1.1.2), con línea oscura y burbujas.
 6. ODS 2 y 12.
-7. Cierre: ilustración de la cordillera, personaje, equipo y enlaces al informe y al manual.
+7. Cierre: ilustración de la cordillera, personaje, equipo y enlaces a los repositorios (frontend y backend) y correo de contacto que se copia al portapapeles.
 Un rastro de huellas de zapato, fijo al costado, se revela con el scroll (solo pantallas anchas).
 
 ## Assets

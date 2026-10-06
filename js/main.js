@@ -46,16 +46,9 @@
     update();
   }
 
-  /* 4. Videos: marco con aviso si todavía no existe el archivo */
-  const playIcon = '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><circle cx="12" cy="12" r="11" opacity=".18"/><path d="M10 8.2v7.6L16.2 12z"/></svg>';
+  /* 4. Videos: carga diferida; el marco queda en blanco hasta que el video esté listo */
   const screens = $$('.browser__screen[data-video]');
-  screens.forEach(box => {
-    const ph = document.createElement('div');
-    ph.className = 'ph';
-    ph.innerHTML = playIcon + '<span>Video próximamente</span><small>' + box.dataset.label + '</small>';
-    box.appendChild(ph);
-    box._ready = false;
-  });
+  screens.forEach(box => { box._ready = false; });
 
   function loadVideo(box) {
     if (box._loading) return;
@@ -65,14 +58,7 @@
     v.setAttribute('muted', ''); v.setAttribute('playsinline', '');
     v.setAttribute('aria-label', 'Video de la funcionalidad');
     v.addEventListener('loadeddata', () => {
-      box._ready = true; $('.ph', box)?.remove(); box.appendChild(v);
-      const b = document.createElement('button');
-      b.className = 'expand'; b.type = 'button'; b.textContent = 'Ampliar';
-      b.addEventListener('click', () => {
-        (v.requestFullscreen || v.webkitRequestFullscreen || v.webkitEnterFullscreen || (() => {})).call(v);
-        v.play().catch(() => {});
-      });
-      box.appendChild(b);
+      box._ready = true; box.appendChild(v);
       box._video = v;
       syncPlayback();
     }, { once: true });
@@ -98,7 +84,7 @@
       const v = box._video; if (!v) return;
       const slide = box.closest('.slide');
       const isActive = !slide || slide === $$('.slide')[current];
-      const should = isActive && visible.has(box) && !reduce;
+      const should = isActive && visible.has(box) && !reduce && !document.documentElement.classList.contains('lb-open');
       if (should) v.play().catch(() => {}); else v.pause();
     });
   }
@@ -139,4 +125,78 @@
     });
     go(0);
   }
+
+  /* 6. Copiar el correo al portapapeles */
+  $$('[data-copy]').forEach(btn => {
+    const label = $('.copy__label', btn), original = label.textContent;
+    btn.addEventListener('click', async () => {
+      const text = btn.dataset.copy;
+      let ok = false;
+      try { await navigator.clipboard.writeText(text); ok = true; }
+      catch (_) {
+        const t = document.createElement('textarea');
+        t.value = text; t.setAttribute('readonly', ''); t.style.cssText = 'position:fixed;opacity:0';
+        document.body.appendChild(t); t.select();
+        try { ok = document.execCommand('copy'); } catch (_) {}
+        t.remove();
+      }
+      label.textContent = ok ? 'Correo copiado' : text;
+      btn.classList.toggle('is-copied', ok);
+      clearTimeout(btn._t);
+      btn._t = setTimeout(() => { label.textContent = original; btn.classList.remove('is-copied'); }, 2200);
+    });
+  });
+
+  /* 7. Ampliar cualquier pantalla del carrusel (videos y capturas) */
+  const lb = document.createElement('div');
+  lb.className = 'lb'; lb.hidden = true;
+  lb.setAttribute('role', 'dialog'); lb.setAttribute('aria-modal', 'true'); lb.setAttribute('aria-label', 'Vista ampliada');
+  lb.innerHTML = '<button class="lb__close" type="button" aria-label="Cerrar vista ampliada"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button><div class="lb__body"></div><p class="lb__cap"></p>';
+  document.body.appendChild(lb);
+  const lbBody = $('.lb__body', lb), lbCap = $('.lb__cap', lb), lbClose = $('.lb__close', lb);
+  let lbFrom = null;
+
+  function openLightbox(box, trigger) {
+    lbBody.innerHTML = '';
+    const slide = box.closest('.slide');
+    lbCap.textContent = slide ? ($('h3', slide)?.textContent || '') : '';
+    if (box.dataset.video) {
+      const v = document.createElement('video');
+      v.src = box.dataset.video; v.controls = true; v.autoplay = true; v.loop = true; v.muted = true; v.playsInline = true;
+      v.setAttribute('playsinline', '');
+      lbBody.className = 'lb__body lb__body--video';
+      lbBody.appendChild(v);
+      v.play().catch(() => {});
+    } else {
+      const src = $('img', box);
+      const im = document.createElement('img');
+      im.src = src.currentSrc || src.src; im.alt = src.alt;
+      lbBody.className = 'lb__body lb__body--img';
+      lbBody.appendChild(im);
+    }
+    lbFrom = trigger;
+    lb.hidden = false;
+    document.documentElement.classList.add('lb-open');
+    lbClose.focus();
+    syncPlayback();
+  }
+  function closeLightbox() {
+    if (lb.hidden) return;
+    lb.hidden = true;
+    lbBody.innerHTML = '';
+    document.documentElement.classList.remove('lb-open');
+    if (lbFrom) lbFrom.focus();
+    syncPlayback();
+  }
+  lbClose.addEventListener('click', closeLightbox);
+  lb.addEventListener('click', (e) => { if (e.target === lb || e.target === lbBody) closeLightbox(); });
+  addEventListener('keydown', (e) => { if (e.key === 'Escape') closeLightbox(); });
+
+  $$('.slide .browser__screen').forEach(box => {
+    const b = document.createElement('button');
+    b.className = 'expand'; b.type = 'button'; b.textContent = 'Ampliar';
+    b.setAttribute('aria-label', 'Ampliar ' + ($('h3', box.closest('.slide'))?.textContent || 'pantalla'));
+    b.addEventListener('click', () => openLightbox(box, b));
+    box.appendChild(b);
+  });
 })();

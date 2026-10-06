@@ -135,8 +135,8 @@
       try { await navigator.clipboard.writeText(text); ok = true; }
       catch (_) {
         const t = document.createElement('textarea');
-        t.value = text; t.setAttribute('readonly', ''); t.style.cssText = 'position:fixed;opacity:0';
-        document.body.appendChild(t); t.select();
+        t.value = text; t.setAttribute('readonly', ''); t.style.cssText = 'position:fixed;top:0;left:0;opacity:0;font-size:16px';
+        document.body.appendChild(t); t.focus(); t.select(); t.setSelectionRange(0, text.length);
         try { ok = document.execCommand('copy'); } catch (_) {}
         t.remove();
       }

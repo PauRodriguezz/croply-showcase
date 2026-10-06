@@ -93,7 +93,8 @@ h2{font-size:clamp(1.7rem,3.2vw,2.5rem);font-weight:800}
 .carousel__controls{display:flex;align-items:center;justify-content:center;gap:18px;margin-top:10px}
 .round{flex:none;display:grid;place-items:center;padding:0;line-height:0;width:46px;height:46px;border-radius:50%;border:1.5px solid var(--primary);background:var(--card);color:var(--primary);cursor:pointer;transition:all .2s}
 .round svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
-.round:hover{background:var(--primary);color:#fff}
+@media(hover:hover){.round:hover{background:var(--primary);color:#fff}}
+.round:active{background:var(--primary);color:#fff}
 .dots{display:flex;gap:8px}
 .dots button{width:10px;height:10px;border-radius:999px;border:0;padding:0;background:#c9d6cf;cursor:pointer;transition:all .3s}
 .dots button[aria-selected="true"]{width:30px;background:var(--primary)}
@@ -232,3 +233,10 @@ h2{font-size:clamp(1.7rem,3.2vw,2.5rem);font-weight:800}
 .lb__body--video video{display:block;max-width:100%;max-height:calc(100vh - 120px)}
 .lb__cap{margin:0;color:#e8f5ef;font-weight:600;font-size:.9rem}
 html.lb-open{overflow:hidden}
+
+/* Móvil: la captura ampliada se ve más grande y se desplaza con el dedo */
+@media(max-width:900px){
+  .lb__body{max-width:100%}
+  .lb__body--img{-webkit-overflow-scrolling:touch;touch-action:pan-x pan-y pinch-zoom}
+  .lb__body--img img{width:max(100%,1000px);max-width:none;margin:0}
+}

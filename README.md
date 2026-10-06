@@ -1,6 +1,6 @@
 # Croply · Página del proyecto
 
-Página de presentación del **Proyecto Final Croply**, un sistema de gestión agrícola inteligente para pequeños y medianos productores de Mendoza. Es el destino del código QR del póster presentado en la 20.º Exposición Anual de Proyectos de Sistema (UTN Facultad Regional Mendoza, noviembre de 2026).
+Página de presentación del **Proyecto Final Croply**, un sistema de gestión agrícola inteligente para pequeños y medianos productores de Mendoza. Es el destino del código QR del póster presentado en la 20º Exposición Anual de Proyectos de Sistema (UTN Facultad Regional Mendoza, noviembre de 2026).
 
 **Ver la página:** https://paurodriguezz.github.io/croply-showcase/
 
@@ -21,7 +21,7 @@ Los sensores IoT del prototipo son simulados.
 ## Repositorios del proyecto
 
 - [Repositorio frontend](https://github.com/diegopaez03/Croply-FrontEnd)
-- Repositorio backend: _pendiente de enlace_
+- [Repositorio backend](https://github.com/diegopaez03/Croply-BackEnd)
 
 ## Equipo
 
@@ -29,22 +29,3 @@ Rodrigo Sanz · Diego Páez · Paula Rodríguez
 
 Proyecto Final de Ingeniería en Sistemas de Información, UTN Facultad Regional Mendoza.
 Contacto: croplyagrosistema@gmail.com
-
-## Sobre este repositorio
-
-Sitio estático en HTML, CSS y JavaScript, sin dependencias ni paso de compilación.
-
-```
-index.html      contenido y secciones
-css/            estilos
-js/             carrusel, videos y animaciones
-assets/         imágenes, ilustraciones y videos
-```
-
-Para verlo en local basta con abrir `index.html` en el navegador, o levantar un servidor simple:
-
-```bash
-python -m http.server 8000
-```
-
-Luego se abre `http://localhost:8000`. Se publica con GitHub Pages desde la rama `main`.
